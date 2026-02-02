@@ -1,0 +1,226 @@
+/* Media Query para Celulares e Tablets */
+@media screen and (max-width: 768px) {
+
+    /* 1. Ajuste do Header: empilha os itens ou esconde se necessário */
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .nav-links {
+        display: none; /* Geralmente se usa um menu hambúrguer aqui, mas para não quebrar seu JS, vamos apenas simplificar */
+    }
+
+    .hero-section {
+        padding: 40px 15px !important;
+        
+        background:     url("../images/Design sem nome (1).png") !important; /* Sua imagem continua aqui */
+        background-size: cover !important;
+        background-position: center !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        min-height: 50vh !important;
+    }
+
+    /* 2. Deixa a "caixa branca" transparente para não tapar a imagem de fundo */
+    .hero-container {
+        background-color: transparent !important; /* Remove o branco sólido */
+        box-shadow: none !important;
+        width: 100% !important;
+        padding: 0 !important;
+        text-align: center !important;
+    }
+
+    /* 3. Garante que o texto fique branco e visível sobre a imagem */
+    .hero-container h1 {
+        color: #ffffff !important;
+        font-size: 1.8rem !important;
+        margin-bottom: 15px !important;
+    }
+
+    .hero-container p {
+        color: #f0f0f0 !important;
+        font-size: 1rem !important;
+    }
+
+
+    /* Ajustamos o texto para garantir que ele seja visível */
+    .hero-section h1 {
+        font-size: 2rem !important;
+        color: #ffffff !important; /* Força o branco */
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero-section p {
+        color: #eeeeee !important;
+        font-size: 1rem !important;
+    
+}
+    /* 3. Hero Section Corrigida */
+   .hero-section {
+    padding: 60px 20px;
+    text-align: center;
+    /* Forçamos o fundo escuro para dar contraste ao texto branco */
+    background: linear-gradient(to bottom, rgba(0, 2, 147, 0.9), rgba(0, 2, 147, 0.7)), 
+                url("../images/bg01.png"); 
+    background-size: cover;
+    background-position: center;
+}
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn-action {
+        width: 90%;
+        text-align: center;
+    }
+
+    /* 3. Grids: Transforma 3 ou mais colunas em 1 ou 2 */
+    .stats-grid, 
+    .services-grid, 
+    .benefits-grid {
+        grid-template-columns: 1fr; /* Tudo empilhado */
+        padding: 10px;
+    }
+
+    /* 4. Seção Sobre: Imagens em cima, texto embaixo */
+    .about-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .about-images, .about-content {
+        width: 100%;
+    }
+
+    .img-main {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 5. Galeria: 2 colunas para não ficar infinito */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .img-large {
+        grid-column: span 2; /* A imagem grande continua ocupando a largura toda */
+    }
+
+    /* 6. Contato: Botões de contato em lista única */
+    .contact-buttons-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-final-whatsapp {
+        text-decoration: none !important;
+        overflow: hidden; /* Corta qualquer coisa que tente sair do botão */
+    }
+    /* Esconde as camadas de plano de fundo animado no mobile */
+    .bg, .bg2, .bg3 {
+        display: none !important;
+    }
+
+    /* Opcional: Ajusta o container pai para não sobrar espaço vazio */
+    .hero-container {
+        background: #f4f4f4; /* Ou a cor de fundo que você preferir */
+        overflow: hidden;
+    }
+
+
+    /* Garante que os ícones de imagem (como o do Whats) não fiquem com tamanho zero */
+    .whatsapp-icon, .btn-whatsapp img {
+        display: inline-block !important;
+        width: 25px !important; /* Ajuste o tamanho conforme o seu design */
+        height: auto !important;
+        visibility: visible !important;
+    }
+
+    /* Se o ícone for parte dos Stats (10+ veículos, etc) */
+    .stat-item img {
+        display: block !important;
+        margin: 0 auto 10px !important;
+        width: 40px !important; /* Tamanho para mobile */
+        height: auto !important;
+    }
+    /* Media Query para Celulares e Tablets */
+
+
+
+    /* 1. Remove o link de contato específico para ganhar espaço */
+    .nav-links li a[href="#contato"] {
+        display: none !important;
+    }
+
+    /* 2. Ajusta a Navbar para alinhar itens horizontalmente */
+    .navbar {
+        flex-direction: row !important; /* Mantém logo de um lado e o resto do outro */
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px 3%;
+        gap: 5px;
+    }
+
+    /* 3. Ajusta os links para ficarem menores e em linha */
+    .nav-links {
+        display: flex !important;
+        order: 3; /* Joga os links para baixo da logo e do botão se necessário */
+        width: 100%; 
+        justify-content: center;
+        gap: 8px;
+        margin-top: 5px;
+    }
+
+    .nav-links li a {
+        padding: 5px 10px;
+        font-size: 12px; /* Reduzido para não empurrar o hero para baixo */
+        background-color: #eee;
+        border-radius: 15px;
+    }
+
+    /* 4. Coloca o botão de Dúvidas ao lado da logo */
+
+    .logo {
+        order: 1;
+        height: 40px; /* Reduz a logo no mobile para salvar o Hero */
+    }
+
+    /* 5. Garante que o Hero Section não seja esmagado */
+    .hero-section {
+        padding-top: 100px !important; /* Espaço para o header fixo não cobrir o texto */
+        min-height: auto !important;
+    }
+    /* Garante que o botão flutuante apareça no mobile */
+    #btnWhatsapp, .btn-whatsapp, .whatsapp-link { 
+        display: flex !important;
+        visibility: visible !important;
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 9999 !important; /* Fica por cima de TUDO */
+        background-color: #25d366 !important; /* Verde oficial */
+        border-radius: 50% !important;
+        width: 60px !important;
+        height: 60px !important;
+        justify-content: center !important;
+        align-items: center !important;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.3) !important;
+    }
+
+    /* Garante que a imagem/ícone dentro dele tenha tamanho */
+    #btnWhatsapp img, .btn-whatsapp img {
+        width: 35px !important;
+        height: 35px !important;
+        display: block !important;
+    }
+}
+
+
+
+    
+
