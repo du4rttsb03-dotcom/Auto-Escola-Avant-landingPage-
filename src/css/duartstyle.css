@@ -5,6 +5,10 @@ html {
 body {
     margin: 0;
 }
+.hero-section {
+    /* Adicione isso para priorizar o carregamento */
+    content-visibility: auto; 
+}
 
 .bg {
     animation: slide 4s ease-in-out infinite alternate;
@@ -745,4 +749,5 @@ html {
 .btn-final-whatsapp:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+
 }
